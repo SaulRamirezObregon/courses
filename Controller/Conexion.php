@@ -3,7 +3,7 @@
 
 class conexion
 {
-	
+	//FALTA EL PASSWORD
 	private $conexion;
 	private $server = "localhost"; 
 	private $usuario = "root";
