@@ -19,6 +19,7 @@ session_destroy();
 		<link rel="stylesheet" href="../../libraries/sweetAlert/sweetalert.css" /> <!-- alertas -->
         <script src="../../libraries/sweetAlert/sweetalert.min.js"></script>
 </head>
+
  <body class="uk-height-1-1">
 
         <div class="uk-vertical-align uk-text-center uk-height-1-1" style="margin-top:50px ">
