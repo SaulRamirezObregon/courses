@@ -10,7 +10,7 @@ session_destroy();
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="../../libraries/css/uikit.min.css" />
-<link rel="stylesheet" href="../../libraries/css/uikit.css" />
+    <link rel="stylesheet" href="../../libraries/css/uikit.css" />
         <script src="../../libraries/jquery/jquery.js"></script>
         <script src="../../libraries/jquery/jquery.min.js"></script>
         <script src="../../libraries/css/uikit.min.js"></script>
@@ -46,10 +46,7 @@ session_destroy();
                         Olvidaste la contraseña?</a>
                     </div>
                 </form>
-
             </div>
         </div>
-
     </body>
-
 </html>
