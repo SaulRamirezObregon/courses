@@ -6,7 +6,7 @@ $passs = $_POST['Password'];
 
 $wish = new conexion();
 $wish->login($users, $passs);
-$whis->cerrar(); // esta madre cierra la session, se debe de ocultar.
+//$whis->cerrar(); // esta madre cierra la session, se debe de ocultar.
 
 header('Location: ../index.php');
 // if ($users != "" && $passs != "") {
