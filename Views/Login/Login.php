@@ -9,24 +9,24 @@ session_destroy();
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="libraries/css/uikit.min.css" />
-<link rel="stylesheet" href="libraries/css/uikit.css" />
-        <script src="libraries/jquery/jquery.js"></script>
-        <script src="libraries/jquery/jquery.min.js"></script>
-        <script src="libraries/css/uikit.min.js"></script>
-        <script src="libraries/css/uikit.js"></script>
+	<link rel="stylesheet" href="../../libraries/css/uikit.min.css" />
+<link rel="stylesheet" href="../../libraries/css/uikit.css" />
+        <script src="../../libraries/jquery/jquery.js"></script>
+        <script src="../../libraries/jquery/jquery.min.js"></script>
+        <script src="../../libraries/css/uikit.min.js"></script>
+        <script src="../../libraries/css/uikit.js"></script>
 
-		<link rel="stylesheet" href="libraries/sweetAlert/sweetalert.css" /> <!-- alertas -->
-        <script src="libraries/sweetAlert/sweetalert.min.js"></script>
+		<link rel="stylesheet" href="../../libraries/sweetAlert/sweetalert.css" /> <!-- alertas -->
+        <script src="../../libraries/sweetAlert/sweetalert.min.js"></script>
 </head>
  <body class="uk-height-1-1">
 
         <div class="uk-vertical-align uk-text-center uk-height-1-1" style="margin-top:50px ">
             <div class="uk-vertical-align-middle" style="width: 250px;">
 
-                <img class="uk-margin-bottom" width="140" height="120" src="libraries/Images/Login.png" style="width:250px ; height:250px;">
+                <img class="uk-margin-bottom" width="140" height="120" src="../../libraries/Images/Login.png" style="width:250px ; height:250px;">
 
-                <form class="uk-panel uk-panel-box uk-form" action="Controller/ControllerLogin.php" method="post">
+                <form class="uk-panel uk-panel-box uk-form" action="../../Controller/ControllerLogin.php" method="post">
                     <div class="uk-form-row">
                         <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Usuario" name="Usuario" required="No puede ir vacio el campo">
                     </div>
