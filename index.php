@@ -13,5 +13,10 @@
 </head>
     <body>
 	   <script type="text/javascript"> swal("Bienvenido!", "Pulsa el boton!", "success")  </script>
+       <?php 
+        session_start();
+        include ("Model/Conexion.php");
+        echo $_session['lastname'];
+        ?>
     </body>
 </html>

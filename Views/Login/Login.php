@@ -12,6 +12,7 @@ session_destroy();
 	<link rel="stylesheet" href="../../libraries/css/uikit.min.css" />
     <link rel="stylesheet" href="../../libraries/css/uikit.css" />
         <script src="../../libraries/jquery/jquery.js"></script>
+        <script src="../../libraries/jquery/desvanecerdiv.js"></script>
         <script src="../../libraries/jquery/jquery.min.js"></script>
         <script src="../../libraries/css/uikit.min.js"></script>
         <script src="../../libraries/css/uikit.js"></script>
@@ -21,7 +22,7 @@ session_destroy();
 </head>
 
  <body class="uk-height-1-1">
-
+    <div class="content2" style="display:none;">   
         <div class="uk-vertical-align uk-text-center uk-height-1-1" style="margin-top:50px ">
             <div class="uk-vertical-align-middle" style="width: 250px;">
 
@@ -48,5 +49,6 @@ session_destroy();
                 </form>
             </div>
         </div>
+    </div>
     </body>
 </html>
