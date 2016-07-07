@@ -13,6 +13,12 @@ include ("../Model/Conexion.php");
 $users = $_POST['Usuario'];
 $passs = $_POST['Password'];
 
+/**
+* Se crea una session en la cual utilizaremos el Username principal
+*/
+session_start();
+$_SESSION['username'] = $users;
+
 $wish = new conexion();
 
 /**
@@ -24,7 +30,13 @@ $wish = new conexion();
 */
 if($wish->login($users, $passs) == true){
 	header('Location: ../index.php');
+
+	
 }else{
-	header('Location: ../views/Login/Login.php');
+/**
+* si la condicion anterior no se cumple, se mandara error con valor si 
+* a travez del url para despues poder utilizarla.
+*/
+	header("Location: ../views/Login/Login.php?error=si");
 }
 ?>

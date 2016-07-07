@@ -39,7 +39,7 @@ class conexion
 		{
 			$_session['id'] = $row['id'];
  			$_session['name'] = $row['names'];
- 			$_session['name'];
+ 			
  			$_session['lastname'] = $row['lastnames'];
 			return true;
 

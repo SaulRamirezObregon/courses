@@ -10,13 +10,22 @@
     <link rel="stylesheet" href="libraries/sweetAlert/sweetalert.css" />
     <!-- alertas -->
     <script src="libraries/sweetAlert/sweetalert.min.js"></script>
+
+
 </head>
-    <body>
-	   <script type="text/javascript"> swal("Bienvenido!", "Pulsa el boton!", "success")  </script>
-       <?php 
-        session_start();
-        include ("Model/Conexion.php");
-        echo $_session['lastname'];
-        ?>
-    </body>
+
+<body>
+    <script type="text/javascript"> swal("Bienvenido!", "Pulsa el boton!", "success")  </script>
+    <?php 
+    session_start();
+
+    if (isset($_SESSION['username'])) {
+        echo "Bienvenido " . $_SESSION['username'];
+    }else{
+     header("Location: views/Login/Login.php?");
+ }
+ ?>
+
+ 
+</body>
 </html>
