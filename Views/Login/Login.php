@@ -16,12 +16,9 @@ ini_set('display_errors', 'Off');
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../../libraries/css/uikit.min.css" />
     <link rel="stylesheet" href="../../libraries/css/uikit.css" />
     <script src="../../libraries/jquery/jquery.js"></script>
     <script src="../../libraries/jquery/desvanecerdiv.js"></script>
-    <script src="../../libraries/jquery/jquery.min.js"></script>
-    <script src="../../libraries/css/uikit.min.js"></script>
     <script src="../../libraries/css/uikit.js"></script>
 
 <!-- alertas -->
@@ -53,6 +50,7 @@ ini_set('display_errors', 'Off');
                         <label class="uk-float-left"><input type="checkbox" name="recordarme"> Recordarme</label>
                         <a class="uk-float-right uk-link uk-link-muted" href="#" name="olvidecontrasenia" >
                             Olvidaste la contraseña?</a> <br>
+                          <label>  <a class="uk-float-right uk-link uk-link-muted" href="registro.php" name=registro""> ¿Aun no te has registrado?</a></label>
                         </div>
                         <div class="uk-form-row uk-text-small">
                           <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->

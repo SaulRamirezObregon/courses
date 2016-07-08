@@ -11,10 +11,16 @@ class conexion
 	private $password;
 	
 
+	 //variables para crear usuario
+	private $names;
+	private $lasnames;
+	private $usernames;
+	private $createPassword;
+	private $createPasswordValidation;
+
 	function __construct()
 	{
 		$this->conexion = new mysqli( $this->server , $this->usuario , $this->pass , $this->db );
-
 		if ($this->conexion->connect_errno) {
 			die("fallo al tratar de conextar con mysql: ( " . $this->conexion->connect_errno . " ) " );
 		}
@@ -38,9 +44,9 @@ class conexion
 		if ( $row = mysqli_fetch_array( $consulta ) ) 
 		{
 			$_session['id'] = $row['id'];
- 			$_session['name'] = $row['names'];
- 			
- 			$_session['lastname'] = $row['lastnames'];
+			$_session['name'] = $row['names'];
+
+			$_session['lastname'] = $row['lastnames'];
 			return true;
 
 		}else
@@ -48,5 +54,38 @@ class conexion
 			return false;
 		}
 	}
+/**
+* Metodo para crear un usuario e insertarlo en la base de datos
+*/
+
+	public function CreateUser($nombres , $apellidos ,$nombreUsuario , $contrasenia ,$contraseniaValidation )
+	{
+		$this->names = $nombres;
+		$this->lasnames = $apellidos;
+		$this->usernames = $nombreUsuario;
+		$this->createPassword = $contrasenia;
+		$this->createPasswordValidation = $contraseniaValidation;
+
+
+		if ($createPassword == $createPasswordValidation) {
+			$validation_pass = true;
+		}else{
+			$validation_pass = false;
+		}
+
+
+		if ($validation_pass == true) {
+			
+			if (mysqli_num_rows() > 0 ) {
+				echo "1";
+			}else{
+				$query = "INSERT INTO users VALUES(NULL,'$this->names','$this->lasnames','$this->usernames','$this->createPassword');";
+				$this->conexion->query($query);
+			}
+
+		}
+
+	}
+
 }
 ?>
