@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
+
     <link rel="stylesheet" href="libraries/css/uikit.css" />
     <script src="libraries/jquery/jquery.js"></script>
     <script src="libraries/css/uikit.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Views/NavBar/master.css">
 
     <link rel="stylesheet" href="libraries/sweetAlert/sweetalert.css" />
     <!-- alertas -->
@@ -15,17 +18,13 @@
 </head>
 
 <body>
+
+
+    <?php   include('Views/NavBar/navbar.php');  ?>
+
     <script type="text/javascript"> swal("Bienvenido!", "Pulsa el boton!", "success")  </script>
-    <?php 
-    session_start();
 
-    if (isset($_SESSION['username'])) {
-        echo "Bienvenido " . $_SESSION['username'];
-    }else{
-     header("Location: views/Login/Login.php?");
- }
- ?>
-
- 
+    
+    
 </body>
 </html>
