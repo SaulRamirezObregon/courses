@@ -19,7 +19,7 @@ $passwordvalidation = $_POST['PasswordValidation'];
 $wish = new conexion();
 
 if($wish->CreateUser($name, $lastnames, $username , $password , $passwordvalidation) == true){
-	header('Location: ../Views/Login/Login.php');
+	header('Location: ../Views/Login/Login.php?succes=si');
 	
 }else{
 /**

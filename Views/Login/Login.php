@@ -59,6 +59,13 @@ ini_set('display_errors', 'Off');
                             echo "Tu usuario o/y contraseña son incorrectos";
                           } ?>
                         </div>
+                        <div class="uk-form-row uk-text-small uk-text-success">
+                          <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
+                          <?php  if ($_GET[succes] == "si") 
+                          {
+                            echo "Muchas gracias por registrarte ahora ya puedes ingresar al sistema";
+                          } ?>
+                        </div>
                       </form>
                     </div>
                   </div>
