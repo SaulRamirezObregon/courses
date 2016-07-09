@@ -52,7 +52,7 @@ ini_set('display_errors', 'Off');
                           Olvidaste la contraseña?</a> <br>
                           <label>  <a class="uk-float-right uk-link uk-link-muted" href="registro.php" name=registro""> ¿Aun no te has registrado?</a></label>
                         </div>
-                        <div class="uk-form-row uk-text-small">
+                        <div class="uk-form-row uk-text-small uk-text-danger">
                           <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
                           <?php  if ($_GET[error] == "si") 
                           {

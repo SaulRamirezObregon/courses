@@ -1,6 +1,9 @@
 <?php 
 session_start();
 session_destroy();
+
+
+ini_set('display_errors', 'Off');
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +27,13 @@ session_destroy();
 					<img class="uk-margin-bottom" width="140" height="120" src="../../libraries/Images/register.png" ">
 
 					<form class="uk-panel uk-panel-box uk-form" action="../../Controller/ControllerRegister.php" method="post">
+						<div class="uk-form-row uk-text-small uk-text-danger">
+                          <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
+                          <?php  if ($_GET[error] == "si") 
+                          {
+                            echo "No se ha podido realizar el registro, varifique sus datos porfavor";
+                          } ?>
+                        </div>
 						<div class="uk-form-row">
 							<input class="uk-width-1-1 uk-form-large" type="text" placeholder="Nombre" name="name" required pattern="^[a-zA-Z ñ.áéíóúäëïöü\'-]*$">
 						</div>
