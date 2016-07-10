@@ -6,7 +6,7 @@ session_start();
 if (isset($_SESSION['username'])) {
  ;
 }else{
- header("Location: ../../views/Login/Login.php?");
+ header("Location: ../../../../repo/courses/views/Login/Login.php");
 }
 
 ?>
