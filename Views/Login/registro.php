@@ -32,7 +32,7 @@ session_destroy();
 
 						</div>
 						<div class="uk-form-row">
-							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="Usuario" name="username" required pattern="/^[0-9a-zA-Z]+$/">
+							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="Usuario" name="username" pattern="^[0-9a-zA-Z]+$">
 
 						</div>
 						<div class="uk-form-row">
