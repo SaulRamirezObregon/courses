@@ -60,29 +60,27 @@ class conexion
 
 	public function CreateUser($nombres , $apellidos ,$nombreUsuario , $contrasenia ,$contraseniaValidation )
 	{
+
 		$this->names = $nombres;
 		$this->lasnames = $apellidos;
 		$this->usernames = $nombreUsuario;
 		$this->createPassword = $contrasenia;
 		$this->createPasswordValidation = $contraseniaValidation;
+		$validation_pass= false;
 
-
-		if ($createPassword == $createPasswordValidation) {
+		if ($this->createPassword ===$this->createPasswordValidation) {
 			$validation_pass = true;
 		}else{
 			$validation_pass = false;
 		}
 
-
 		if ($validation_pass == true) {
-			
-			if (mysqli_num_rows() > 0 ) {
-				echo "1";
-			}else{
-				$query = "INSERT INTO users VALUES(NULL,'$this->names','$this->lasnames','$this->usernames','$this->createPassword');";
+				$query = "INSERT INTO users VALUES(null,'$this->names','$this->lasnames','$this->usernames','$this->createPassword');";
 				$this->conexion->query($query);
-			}
-
+				echo mysqli_error($this->conexion);
+				return true;
+		}else{
+			return false;
 		}
 
 	}

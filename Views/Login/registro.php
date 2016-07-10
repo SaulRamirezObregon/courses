@@ -25,14 +25,14 @@ session_destroy();
 
 					<form class="uk-panel uk-panel-box uk-form" action="../../Controller/ControllerRegister.php" method="post">
 						<div class="uk-form-row">
-							<input class="uk-width-1-1 uk-form-large" type="text" placeholder="Nombre" name="name" required="No puede ir vacio el campo">
+							<input class="uk-width-1-1 uk-form-large" type="text" placeholder="Nombre" name="name" required pattern="^[a-zA-Z ñ.áéíóúäëïöü\'-]*$">
 						</div>
 						<div class="uk-form-row">
-							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="apellidos" name="lastnames" required="No puede ir vacio el campo">
+							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="apellidos" name="lastnames"  required pattern="^[a-zA-Z ñ.áéíóúäëïöü\'-]*$">
 
 						</div>
 						<div class="uk-form-row">
-							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="Usuario" name="username" required="No puede ir vacio el campo">
+							<input class="uk-width-1-1 uk-form-large"  type="text" placeholder="Usuario" name="username" required pattern="/^[0-9a-zA-Z]+$/">
 
 						</div>
 						<div class="uk-form-row">
