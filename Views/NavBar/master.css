@@ -7,6 +7,13 @@ ul {
 
 }
 
+.menu ul li a {font-size:12px;
+font-weight:normal;
+display:block;
+color:#797979;
+border-left:3px solid #ffffff;
+background:#ffffff;}
+
 li {
     float: left;
     border-right:1px solid #bbb;
@@ -34,6 +41,6 @@ li a:hover:not(.active) {
 .active {
     color: white;
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color: #35b3ee;
     
 }

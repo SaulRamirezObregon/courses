@@ -48,23 +48,31 @@ ini_set('display_errors', 'Off');
                     </div>
                     <div class="uk-form-row uk-text-small">
                         <label class="uk-float-left"><input type="checkbox" name="recordarme"> Recordarme</label>
-                        <a class="uk-float-right uk-link uk-link-muted" href="#" name="olvidecontrasenia" >
+                        <a class="uk-float-right uk-link uk-link-muted" href="RecoverPass.php" name="olvidecontrasenia" >
                           Olvidaste la contraseña?</a> <br>
                           <label>  <a class="uk-float-right uk-link uk-link-muted" href="registro.php" name=registro""> ¿Aun no te has registrado?</a></label>
                         </div>
                         <div class="uk-form-row uk-text-small uk-text-danger">
                           <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
-                          <?php  if ($_GET[error] == "si") 
+                          <?php 
+                           if ($_GET[error] == "si") 
                           {
                             echo "Tu usuario o/y contraseña son incorrectos";
-                          } ?>
-                        </div>
-                        <div class="uk-form-row uk-text-small uk-text-success">
-                          <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
-                          <?php  if ($_GET[succes] == "si") 
+                          }
+                           if ($_GET[succes] == "si") 
                           {
                             echo "Muchas gracias por registrarte ahora ya puedes ingresar al sistema";
-                          } ?>
+                          }
+                          if ($_GET[succes] == "recoveri") 
+                          {
+                            echo "Tu password Ha cambiado, intenta entrar al sistema de nuevo";
+                          } 
+
+                          if ($_GET[succes] == "deleteUser") 
+                          {
+                            echo "Se ha eliminado tu cuenta correctamente";
+                          } 
+                           ?>
                         </div>
                       </form>
                     </div>

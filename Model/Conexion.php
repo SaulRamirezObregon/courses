@@ -84,6 +84,48 @@ class conexion
 		}
 
 	}
+	//
+	public function RecoverPass($nombreUsuario , $contrasenia, $contraseniaValidation)
+	{
+		$this->usernames = $nombreUsuario;
+		$this->createPassword = $contrasenia;
+		$this->createPasswordValidation = $contraseniaValidation;
+		$validation_pass= false;
+
+		if ($this->createPassword ===$this->createPasswordValidation) {
+			$validation_pass = true;
+		}else{
+			$validation_pass = false;
+		}
+
+		if ($validation_pass == true) {
+	//UPDATE users SET password='pendejete' where username='Pedro';
+$query = "UPDATE users SET password='".$this->createPassword ."' where username='".$this->usernames ."';";
+			$this->conexion->query($query);
+			echo mysqli_error($this->conexion);
+			return true;
+		}else{
+			return false;
+		}
+
+	}	
+	//
+public function DeleteUserByUsername($nombreUsuario)
+{
+	//DELETE FROM `users` WHERE `users`.`id` = 33"
+
+	$this->usernames = $nombreUsuario;
+
+	$query = "DELETE FROM users where username='".$this->usernames ."';";
+			$this->conexion->query($query);
+			echo mysqli_error($this->conexion);
+			return true;
+
+}
+
+
+
+
 
 }
 ?>
