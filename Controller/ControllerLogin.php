@@ -12,6 +12,9 @@ include ("../Model/Conexion.php");
 */
 $users = $_POST['Usuario'];
 $passs = $_POST['Password'];
+$permision = $_POST['permission'];
+
+
 
 /**
 * Se crea una session en la cual utilizaremos el Username principal
@@ -28,15 +31,30 @@ $wish = new conexion();
 * de lo contrario me redireccionara de nuevo al login
 * Dentro de la funcion de login, se uso true o false. 
 */
-if($wish->login($users, $passs) == true){
-	header('Location: ../index.php');
+if ($_POST['permission'] == 'ADMINISTRADOR') {
+	$permision = $_POST['permission'];
+	if($wish->loginAdmin($users, $passs , $permision) == true){
+		header('Location: ../Views/Administrator/Administrator/production/Administrator.php');
+	}
+	else{
 
-	
-}else{
-/**
-* si la condicion anterior no se cumple, se mandara error con valor si 
-* a travez del url para despues poder utilizarla.
-*/
-	header("Location: ../views/Login/Login.php?error=si");
+		header("Location: ../views/Login/Login.php?error=si");
+	}
 }
+
+
+
+if ($_POST['permission'] == 'USUARIO') {
+	$permision = $_POST['permission'];
+	if($wish->loginUser($users, $passs , $permision) == true){
+		header('Location: ../index.php');
+
+
+	}
+	else{
+		header("Location: ../views/Login/Login.php?error=si");
+	}
+}
+
+
 ?>

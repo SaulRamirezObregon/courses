@@ -4,7 +4,7 @@ session_destroy();
 
 
 ini_set('display_errors', 'Off');
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +28,12 @@ ini_set('display_errors', 'Off');
 
 					<form class="uk-panel uk-panel-box uk-form" action="../../Controller/ControllerRegister.php" method="post">
 						<div class="uk-form-row uk-text-small uk-text-danger">
-                          <!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
-                          <?php  if ($_GET[error] == "si") 
-                          {
-                            echo "No se ha podido realizar el registro, varifique sus datos porfavor";
-                          } ?>
-                        </div>
+							<!--recibiendo como parametro a travez del url el error con valor si se imprira lo siguiente -->
+							<?php  if ($_GET[error] == "si") 
+							{
+								echo "No se ha podido realizar el registro, varifique sus datos porfavor";
+							} ?>
+						</div>
 						<div class="uk-form-row">
 							<input class="uk-width-1-1 uk-form-large" type="text" placeholder="Nombre" name="name" required pattern="^[a-zA-Z ñ.áéíóúäëïöü\'-]*$">
 						</div>
@@ -54,6 +54,15 @@ ini_set('display_errors', 'Off');
 							<input class="uk-width-1-1 uk-form-large"  type="password" placeholder="Password" name="PasswordValidation" required="No puede ir vacio el campo" >
 
 							<a href="" class="uk-form-password-toggle" data-uk-form-password></a>
+						</div>
+						<div class="uk-form-row" data-uk-dropdown>
+
+							<select name="permission[]">
+								<option value="ADMINISTRADOR">ADMINISTRADOR</option>
+								<option value="USUARIO">USUARIO</option>
+
+							</select>
+
 						</div>
 						<div class="uk-form-row">
 							<input type="submit"  value="Registrarse" class="uk-width-1-1 uk-button uk-button-primary uk-button-large" style="color:white ;">

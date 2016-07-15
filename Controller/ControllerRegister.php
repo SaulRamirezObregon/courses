@@ -15,10 +15,11 @@ $lastnames = $_POST['lastnames'];
 $username = $_POST['username'];
 $password = $_POST['Password'];
 $passwordvalidation = $_POST['PasswordValidation'];
+$permission = $_POST['permission'];
 
 $wish = new conexion();
 
-if($wish->CreateUser($name, $lastnames, $username , $password , $passwordvalidation) == true){
+if($wish->CreateUser($name, $lastnames, $username , $password , $passwordvalidation , $permission[0] ) == true){
 	header('Location: ../Views/Login/Login.php?succes=si');
 	
 }else{
@@ -26,8 +27,8 @@ if($wish->CreateUser($name, $lastnames, $username , $password , $passwordvalidat
 * si la condicion anterior no se cumple, se mandara error con valor si 
 * a travez del url para despues poder utilizarla.
 */
-	header("Location: ../views/Login/registro.php?error=si");
+header("Location: ../views/Login/registro.php?error=si");
 }
 ?>
 
- ?>
+?>
