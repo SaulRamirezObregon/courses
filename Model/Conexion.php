@@ -28,6 +28,7 @@ class conexion
 			die("fallo al tratar de conextar con mysql: ( " . $this->conexion->connect_errno . " ) " );
 		}
 	}
+	
 
 	public function cerrar()
 	{
@@ -166,4 +167,5 @@ private function SelectUsers()
 
 
 } //fin de la clase conexion
+
 ?>

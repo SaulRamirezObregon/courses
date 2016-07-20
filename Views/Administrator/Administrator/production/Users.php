@@ -28,7 +28,6 @@
     <script type="text/javascript" src="DataTables/jquery.datatables.min.css" ></script>
 
 
-    <?php   include('../../../../Model/Conexion.php');  ?>
 
 </head>
 
@@ -42,7 +41,6 @@
       <div class="panel panel-default">
           <div class="panel-heading">USERS</div>
           <div class="panel-body">
-
             <table class="table table-hover" id="Userss">
                 <thead class="thead-default">
                     <tr>
@@ -55,18 +53,63 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $wish = new conexion(); ?>
-                    <?php foreach ($users as $user) : ?>
+
+                    <?php 
+                    require '../../../../Model/database.php';
+
+                    $db = Database::connect();
+
+                    $statement = $db->query('SELECT id,names,lastnames,username,password,permission FROM users ; ' );
+
+
+                    while ($item = $statement->fetch())
+                    {
+                        echo '<tr>';
+                         echo '<td>'. $item['id']  . ' </td>';
+                        echo '<td>'. $item['names']  . ' </td>';
+                        echo '<td>'. $item['lastnames']  . ' </td>';
+                        echo '<td>'. $item['username']  . ' </td>';
+                        echo '<td>'. $item['password']  . ' </td>';
+                        echo '<td>'. $item['permission'] .  ' </td>';
+                         echo '<tr>';
+                    }
+
+
+                    ?>
+
+
+                </tbody>
+            </table> 
+
+
+
+
+
+
+
+           <!--  <table class="table table-hover" id="Userss">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Id</th>
+                        <th>Names</th>
+                        <th>Last Names</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Permissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php // $wish = new conexion(); ?>
+                    <?php //foreach ($users as $user) : ?>
                         <tr>
 
-                         <td class=""><?php echo $this->escapeHtml($users->$this->wish->SelectUsers());?></td>
-                        <!--  <td class=""><?php //echo $this->escapeHtml($admin->getLastLoginAttemp()->format('d-m-Y H:i:s'));?></td>
-                         <td class=""><?php //echo $this->escapeHtml($admin->getAttempsLogin());?></td> --> -->
+                         <td class=""><?php// echo $this->escapeHtml($users->$this->wish->SelectUsers());?></td>
+                       
 
                      </tr>
-                 <?php endforeach; ?>
+                 <?php //endforeach; ?>
              </tbody>
-         </table>
+         </table> -->
      </div>
  </div>
 </div>
